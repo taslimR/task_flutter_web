@@ -16,7 +16,7 @@ class SmallScreen extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            // color: Colors.green,
+            // color: Color.fromARGB(255, 90, 117, 91),
             child: Obx(() {
               return searchController.filteredList.value.isNotEmpty
                   ? ResponsiveGridList(

@@ -61,6 +61,7 @@ class SiteLayout extends StatelessWidget {
                 ],
               )
             : TextField(
+                onChanged: (value) => searchController.setSearchText(value),
                 controller: _c,
                 decoration: InputDecoration(
                   suffixIcon: Align(
@@ -96,11 +97,6 @@ class SiteLayout extends StatelessWidget {
           smallScreen: SmallScreen(),
         ),
       ),
-      // ListView.builder(
-      //     itemCount: searchController.filteredList.length,
-      //     itemBuilder: (context, index) {
-      //       return Text(searchController.filteredList[index].name);
-      //     }),
     );
   }
 }
