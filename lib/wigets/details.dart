@@ -82,8 +82,8 @@ class Details extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      searchController.filteredList
-                          .value[searchController.selectedUser.value - 1].name,
+                      searchController
+                          .users[searchController.selectedUser.value - 1].name,
                       style: kTextStyle,
                     ),
                     SizedBox(
@@ -91,8 +91,7 @@ class Details extends StatelessWidget {
                     ),
                     Text(
                       searchController
-                          .filteredList
-                          .value[searchController.selectedUser.value - 1]
+                          .users[searchController.selectedUser.value - 1]
                           .userName
                           .toLowerCase(),
                       style: kTextStyle,
@@ -101,25 +100,9 @@ class Details extends StatelessWidget {
                       height: 4,
                     ),
                     Text(
-                      searchController.filteredList
-                          .value[searchController.selectedUser.value - 1].email
+                      searchController
+                          .users[searchController.selectedUser.value - 1].email
                           .toLowerCase(),
-                      style: kTextStyle,
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      searchController.filteredList
-                          .value[searchController.selectedUser.value - 1].phone
-                          .toLowerCase(),
-                      style: kTextStyle,
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      "${searchController.filteredList.value[searchController.selectedUser.value - 1].address["suite"]}, ${searchController.filteredList.value[searchController.selectedUser.value - 1].address["street"]}, ${searchController.filteredList.value[searchController.selectedUser.value - 1].address["city"]}",
                       style: kTextStyle,
                     ),
                     SizedBox(
@@ -127,8 +110,23 @@ class Details extends StatelessWidget {
                     ),
                     Text(
                       searchController
-                          .filteredList
-                          .value[searchController.selectedUser.value - 1]
+                          .users[searchController.selectedUser.value - 1].phone
+                          .toLowerCase(),
+                      style: kTextStyle,
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      "${searchController.users[searchController.selectedUser.value - 1].address["suite"]}, ${searchController.users[searchController.selectedUser.value - 1].address["street"]}, ${searchController.users[searchController.selectedUser.value - 1].address["city"]}",
+                      style: kTextStyle,
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      searchController
+                          .users[searchController.selectedUser.value - 1]
                           .website
                           .toLowerCase(),
                       style: kTextStyle,
@@ -137,7 +135,7 @@ class Details extends StatelessWidget {
                       height: 4,
                     ),
                     Text(
-                      '${searchController.filteredList.value[searchController.selectedUser.value - 1].company["name"]},  ',
+                      '${searchController.users[searchController.selectedUser.value - 1].company["name"]},  ',
                       style: kTextStyle,
                     )
                   ],
