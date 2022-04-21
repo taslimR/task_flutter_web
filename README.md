@@ -1,6 +1,6 @@
 # task1
 
-A Flutter web app.
+A Flutter web app (also workable in mobile devices).
 
 ## Sample
 (____________)
@@ -49,3 +49,7 @@ For more info, visit [here](https://docs.flutter.dev/deployment/web#building-the
 ![Landing page](https://i.ibb.co/9hR5wZB/1.png)
 ![Search](https://i.ibb.co/YbF6V3g/Screenshot-from-2022-04-22-00-50-00.png)
 ![Responsive](https://i.ibb.co/bR2SVnz/Screenshot-from-2022-04-22-00-55-53.png)
+
+## Mobile View
+Android APK screenshot
+![Mobile](https://i.ibb.co/jyBfW7M/Screenshot-2022-04-22-01-22-41-644-com-example-task1.jpg)
