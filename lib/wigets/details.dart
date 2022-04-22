@@ -24,71 +24,44 @@ class Details extends StatelessWidget {
           height: 16,
         ),
         Container(
-          child: Row(
-            children: [
-              Column(
+          child: Obx(() {
+            return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Name: ",
-                    style: kLabelStyle,
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    "Username: ",
-                    style: kLabelStyle,
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    "Email: ",
-                    style: kLabelStyle,
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    "Phone: ",
-                    style: kLabelStyle,
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    "Address: ",
-                    style: kLabelStyle,
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    "Website: ",
-                    style: kLabelStyle,
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    "Company: ",
-                    style: kLabelStyle,
-                  ),
-                ],
-              ),
-              Obx(() {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      searchController
-                          .users[searchController.selectedUser.value - 1].name,
-                      style: kTextStyle,
+                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Container(
+                      width: 80,
+                      child: Text(
+                        "Name: ",
+                        style: kLabelStyle,
+                      ),
                     ),
-                    SizedBox(
-                      height: 4,
+                    // SizedBox(
+                    //   height: 4,
+                    // ),
+                    Expanded(
+                      child: Text(
+                        searchController
+                            .users[searchController.selectedUser.value - 1]
+                            .name,
+                        style: kTextStyle,
+                      ),
+                    )
+                  ]),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Container(
+                      width: 80,
+                      child: Text(
+                        "Username: ",
+                        style: kLabelStyle,
+                      ),
                     ),
+                    // SizedBox(
+                    //   height: 4,
+                    // ),
                     Text(
                       searchController
                           .users[searchController.selectedUser.value - 1]
@@ -96,34 +69,86 @@ class Details extends StatelessWidget {
                           .toLowerCase(),
                       style: kTextStyle,
                     ),
-                    SizedBox(
-                      height: 4,
+                  ]),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Container(
+                      width: 80,
+                      child: Text(
+                        "Email: ",
+                        style: kLabelStyle,
+                      ),
                     ),
+                    // SizedBox(
+                    //   height: 4,
+                    // ),
                     Text(
                       searchController
                           .users[searchController.selectedUser.value - 1].email
                           .toLowerCase(),
                       style: kTextStyle,
                     ),
-                    SizedBox(
-                      height: 4,
+                  ]),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Container(
+                      width: 80,
+                      child: Text(
+                        "Phone: ",
+                        style: kLabelStyle,
+                      ),
                     ),
+                    // SizedBox(
+                    //   height: 4,
+                    // ),
                     Text(
                       searchController
                           .users[searchController.selectedUser.value - 1].phone
                           .toLowerCase(),
                       style: kTextStyle,
                     ),
-                    SizedBox(
-                      height: 4,
+                  ]),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Container(
+                      width: 80,
+                      child: Text(
+                        "Address: ",
+                        style: kLabelStyle,
+                      ),
                     ),
-                    Text(
-                      "${searchController.users[searchController.selectedUser.value - 1].address["suite"]}, ${searchController.users[searchController.selectedUser.value - 1].address["street"]}, ${searchController.users[searchController.selectedUser.value - 1].address["city"]}",
-                      style: kTextStyle,
+                    // SizedBox(
+                    //   height: 4,
+                    // ),
+                    Expanded(
+                      child: Text(
+                        "${searchController.users[searchController.selectedUser.value - 1].address["suite"]}, ${searchController.users[searchController.selectedUser.value - 1].address["street"]}, ${searchController.users[searchController.selectedUser.value - 1].address["city"]}, ZIP Code - ${searchController.users[searchController.selectedUser.value - 1].address["zipcode"]}",
+                        style: kTextStyle,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 4,
+                      ),
                     ),
-                    SizedBox(
-                      height: 4,
+                  ]),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Container(
+                      width: 80,
+                      child: Text(
+                        "Website: ",
+                        style: kLabelStyle,
+                      ),
                     ),
+                    // SizedBox(
+                    //   height: 4,
+                    // ),
                     Text(
                       searchController
                           .users[searchController.selectedUser.value - 1]
@@ -131,18 +156,30 @@ class Details extends StatelessWidget {
                           .toLowerCase(),
                       style: kTextStyle,
                     ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      '${searchController.users[searchController.selectedUser.value - 1].company["name"]},  ',
-                      style: kTextStyle,
-                    )
-                  ],
-                );
-              }),
-            ],
-          ),
+                  ]),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 80,
+                        child: Text(
+                          "Company: ",
+                          style: kLabelStyle,
+                        ),
+                      ),
+                      // SizedBox(
+                      //   height: 4,
+                      // ),
+                      Text(
+                        '${searchController.users[searchController.selectedUser.value - 1].company["name"]},  ',
+                        style: kTextStyle,
+                      )
+                    ],
+                  ),
+                ]);
+          }),
         ),
       ],
     );
